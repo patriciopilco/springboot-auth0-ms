@@ -1,0 +1,31 @@
+# Archivos y directorios a ignorar durante el build de Docker
+.git
+.gitignore
+README.md
+HELP.md
+.mvn/
+mvnw
+mvnw.cmd
+.github/
+.vscode/
+.idea/
+*.iml
+*.log
+
+# Archivos temporales y de build (excepto el JAR final)
+target/classes/
+target/test-classes/
+target/generated-sources/
+target/maven-archiver/
+target/maven-status/
+target/surefire-reports/
+
+# Mantener solo el JAR final
+!target/*.jar
+
+# Node modules (si los hay)
+node_modules/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

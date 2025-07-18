@@ -53,7 +53,7 @@ jobs:
           registryUsername: ${{ secrets.ACR_USERNAME }}
           registryPassword: ${{ secrets.ACR_PASSWORD }}
           environmentVariables: |
-            SERVER_PORT=8080
+            SPRING_PROFILES_ACTIVE=prod
             SPRING_PROFILES_ACTIVE=prod
             AUTH0_DOMAIN=${{ secrets.AUTH0_DOMAIN }}
             AUTH0_ISSUER_URI=${{ secrets.AUTH0_ISSUER_URI }}

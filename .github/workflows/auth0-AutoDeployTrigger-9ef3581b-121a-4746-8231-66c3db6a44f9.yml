@@ -48,8 +48,8 @@ jobs:
           dockerfilePath: ./Dockerfile
           containerAppName: auth0
           resourceGroup: apps-github-actions
-          imageToBuild: ${{ secrets.ACR_LOGIN_SERVER }}/auth0:${{ github.sha }}
-          registryUrl: ${{ secrets.ACR_LOGIN_SERVER }}
+          imageToBuild: auth0acr2025.azurecr.io/auth0:${{ github.sha }}
+          registryUrl: auth0acr2025.azurecr.io
           registryUsername: ${{ secrets.ACR_USERNAME }}
           registryPassword: ${{ secrets.ACR_PASSWORD }}
           environmentVariables: |

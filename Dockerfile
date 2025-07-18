@@ -10,7 +10,7 @@ RUN apk add --no-cache wget && \
 WORKDIR /app
 
 # Copiar el archivo JAR de la aplicación
-COPY target/springboot-auth0-ms-*.jar app.jar
+COPY target/springboot-auth0-ms-0.0.1-SNAPSHOT.jar app.jar
 
 # Cambiar la propiedad del archivo JAR al usuario no-root
 RUN chown appuser:appgroup app.jar

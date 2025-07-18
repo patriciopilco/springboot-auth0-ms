@@ -41,14 +41,17 @@ jobs:
           tenant-id: ${{ secrets.AUTH0_AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AUTH0_AZURE_SUBSCRIPTION_ID }}
 
-      - name: Build and push container image to registry
+      - name: Build and push container image to Azure Container Registry (ACR) and deploy to Container Apps
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}
           dockerfilePath: ./Dockerfile
           containerAppName: auth0
           resourceGroup: apps-github-actions
-          imageToBuild: auth0:${{ github.sha }}
+          imageToBuild: ${{ secrets.ACR_LOGIN_SERVER }}/auth0:${{ github.sha }}
+          registryUrl: ${{ secrets.ACR_LOGIN_SERVER }}
+          registryUsername: ${{ secrets.ACR_USERNAME }}
+          registryPassword: ${{ secrets.ACR_PASSWORD }}
           environmentVariables: |
             SERVER_PORT=8080
             SPRING_PROFILES_ACTIVE=prod
